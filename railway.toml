@@ -5,4 +5,4 @@ dockerfilePath = "./Dockerfile"
 [deploy]
 startCommand = "dotnet EltafawkPlatform.dll"
 restartPolicyType = "always"
-healthcheckPath = "/health"
+healthcheckPath = "/"
