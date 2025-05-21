@@ -55,10 +55,14 @@ builder.Services.AddScoped(serviceProvider =>
     return client.GetDatabase(settings.DatabaseName);
 });
 
+// HttpClient
+var apiBaseUrl = builder.Configuration["ApiBaseUrl"] ?? "https://eltafawk-production.up.railway.app/";
+
 builder.Services.AddHttpClient("ServerAPI", client =>
 {
-    client.BaseAddress = new Uri("https://localhost:44361/");
+    client.BaseAddress = new Uri(apiBaseUrl);
 });
+
 
 
 builder.Services.AddScoped(sp =>

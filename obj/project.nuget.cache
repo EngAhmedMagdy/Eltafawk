@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "YDtbNQB8JT4=",
+  "dgSpecHash": "CFT39NQISzY=",
   "success": true,
-  "projectFilePath": "C:\\Users\\ahmed magdy\\Desktop\\freelance\\Eltafawk website\\EltafawkPlatform\\EltafawkPlatform\\EltafawkPlatform.csproj",
+  "projectFilePath": "C:\\Users\\ahmed magdy\\Desktop\\freelance\\EltafawkPlatform\\EltafawkPlatform\\EltafawkPlatform.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\ahmed magdy\\.nuget\\packages\\aspnetcore.identity.mongo\\10.1.0\\aspnetcore.identity.mongo.10.1.0.nupkg.sha512",
     "C:\\Users\\ahmed magdy\\.nuget\\packages\\awssdk.core\\3.7.100.14\\awssdk.core.3.7.100.14.nupkg.sha512",

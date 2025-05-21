@@ -1429,11 +1429,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\ahmed magdy\\Desktop\\freelance\\Eltafawk website\\EltafawkPlatform\\EltafawkPlatform\\EltafawkPlatform.csproj",
+      "projectUniqueName": "C:\\Users\\ahmed magdy\\Desktop\\freelance\\EltafawkPlatform\\EltafawkPlatform\\EltafawkPlatform.csproj",
       "projectName": "EltafawkPlatform",
-      "projectPath": "C:\\Users\\ahmed magdy\\Desktop\\freelance\\Eltafawk website\\EltafawkPlatform\\EltafawkPlatform\\EltafawkPlatform.csproj",
+      "projectPath": "C:\\Users\\ahmed magdy\\Desktop\\freelance\\EltafawkPlatform\\EltafawkPlatform\\EltafawkPlatform.csproj",
       "packagesPath": "C:\\Users\\ahmed magdy\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\ahmed magdy\\Desktop\\freelance\\Eltafawk website\\EltafawkPlatform\\EltafawkPlatform\\obj\\",
+      "outputPath": "C:\\Users\\ahmed magdy\\Desktop\\freelance\\EltafawkPlatform\\EltafawkPlatform\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
