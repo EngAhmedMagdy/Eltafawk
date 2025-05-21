@@ -1,8 +1,8 @@
 [build]
 builder = "dockerfile"
-dockerfilePath = "./RailwayDeploymentAot/Dockerfile"
+dockerfilePath = "./EltafawkPlatform/Dockerfile"
 
 [deploy]
-startCommand = "./RailwayDeploymentAot"
+startCommand = "dotnet EltafawkPlatform.dll"
 restartPolicyType = "always"
 healthcheckPath = "/health"
