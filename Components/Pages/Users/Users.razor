@@ -3,7 +3,7 @@
 @inject HttpClient Http
 @inject NavigationManager Navigation
 @inject IJSRuntime JsRuntime
-
+@rendermode InteractiveServer
 <h2>إدارة المستخدمين</h2>
 
 @if (users == null)
@@ -50,7 +50,7 @@ else
 
     private void InboxUser(string id)
     {
-        Navigation.NavigateTo($"/inbox/send-message");
+        Navigation.NavigateTo($"/inbox/send-message/{id}");
     }
     private void EditUser(string id)
     {

@@ -11,7 +11,7 @@
 }
 else
 {
-    <EditForm Model="@form" OnValidSubmit="HandleSubmit">
+    <EditForm Model="@form" OnValidSubmit="HandleSubmit" FormName="EditCourse" method="put">
         <DataAnnotationsValidator />
         <ValidationSummary />
 

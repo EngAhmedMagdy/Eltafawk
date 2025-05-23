@@ -10,9 +10,9 @@ namespace EltafawkPlatform.Dto
         public string Category { get; set; } = string.Empty;
         public string Description { get; set; } = string.Empty;
 
-        public string? ImageFiles { get; set; }
-        public string? YoutubeVideos { get; set; } 
-        public string? Texts { get; set; }
+        public string? ImageFiles { get; set; } = string.Empty;
+        public string? YoutubeVideos { get; set; } = string.Empty;
+        public string? Texts { get; set; } = string.Empty;
     }
 
 }

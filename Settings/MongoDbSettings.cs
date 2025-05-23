@@ -1,4 +1,4 @@
-﻿namespace EltafawkPlatform.Settings
+﻿namespace BlazorApp1.Settings
 {
     public class MongoDbSettings
     {

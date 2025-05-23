@@ -1,0 +1,66 @@
+﻿@page "/subscribe-packages"
+@using BlazorApp1.Dto
+@inject HttpClient Http
+@inject NavigationManager Navigation
+@inject IJSRuntime JsRuntime
+@rendermode InteractiveServer
+
+<h3>باقات التفوق</h3>
+<NavLink href="/subscribe-packages/create" class="btn btn-primary mb-3">إضافة باقة</NavLink>
+
+@if (packages == null)
+{
+    <p>Loading...</p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>الاسم</th>
+                <th>النوع</th>
+                <th>السعر</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in packages)
+            {
+                <tr>
+                    <td>@item.Name</td>
+                    <td>@item.Type</td>
+                    <td>@item.Price</td>
+                    <td>
+                        <button class="btn btn-sm btn-info me-1" @onclick="() => EditCourse(item.Id.ToString())">✏️ تعديل</button>
+                        <button class="btn btn-sm btn-danger" @onclick="() => Delete(item.Id.ToString())">🗑️ حذف</button>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@code {
+    List<SubscribePackageDto>? packages;
+
+    protected override async Task OnInitializedAsync()
+    {
+        packages = await Http.GetFromJsonAsync<List<SubscribePackageDto>>("/api/SubscribePackages");
+    }
+    private void EditCourse(string id)
+    {
+        Navigation.NavigateTo($"/subscribe-packages/edit/{id}");
+    }
+    private async Task Delete(string id)
+    {
+        if (!await JsRuntime.InvokeAsync<bool>("confirm", "هل أنت متأكد من حذف هذه الدورة؟"))
+            return;
+
+        var response = await Http.DeleteAsync($"/api/SubscribePackages/{id}");
+        if (response.IsSuccessStatusCode)
+        {
+            packages = await Http.GetFromJsonAsync<List<SubscribePackageDto>>("/api/SubscribePackages");
+        }
+        
+    }
+}

@@ -24,12 +24,12 @@ else
 
 @code {
     [Parameter]
-    public string UserId { get; set; } = "682b81f14e5dd86cc34e668a";
+    public string UserId { get; set; }
 
     private List<InboxMessageDto>? messages;
 
     protected override async Task OnInitializedAsync()
     {
-        messages = await Http.GetFromJsonAsync<List<InboxMessageDto>>($"/api/inbox/received/{UserId}");
+        messages = await Http.GetFromJsonAsync<List<InboxMessageDto>>($"api/inbox/received/{UserId}");
     }
 }

@@ -1,7 +1,10 @@
-﻿@page "/inbox/send-message"
+﻿@page "/inbox/send-message/{ReceiverId}"
 @using EltafawkPlatform.Dto
 @inject HttpClient Http
 @inject NavigationManager Navigation
+@inject AuthenticationStateProvider AuthenticationStateProvider
+
+@rendermode InteractiveServer
 
 <h3>إرسال رسالة</h3>
 
@@ -11,7 +14,7 @@
 
     <div class="mb-3">
         <label class="form-label">المستلم (ID):</label>
-        <InputText class="form-control" @bind-Value="newMessage.ReceiverId" />
+        <InputText class="form-control" @bind-Value="newMessage.ReceiverId" disabled />
     </div>
 
     <div class="mb-3">
@@ -33,13 +36,34 @@
 }
 
 @code {
-    [SupplyParameterFromForm]
+    [Parameter]
+    public string? ReceiverId { get; set; }
+
     private InboxMessageDto newMessage { get; set; } = new();
     private string? successMessage;
 
+    protected override void OnInitialized()
+    {
+        if (!string.IsNullOrEmpty(ReceiverId))
+        {
+            newMessage.ReceiverId = ReceiverId;
+        }
+    }
+
     private async Task HandleValidSubmit()
     {
-        // Optional: Get sender ID from the logged-in user context
+        var authState = await AuthenticationStateProvider.GetAuthenticationStateAsync();
+        var user = authState.User;
+
+        if (user.Identity?.IsAuthenticated == true)
+        {
+            var userId = user.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier)?.Value;
+            if (userId != null)
+            {
+                newMessage.SenderId = userId;
+            }
+        }
+
         newMessage.SentAt = DateTime.UtcNow;
 
         var response = await Http.PostAsJsonAsync("/api/inbox/send", newMessage);
@@ -48,12 +72,11 @@
         {
             successMessage = "تم إرسال الرسالة بنجاح!";
             newMessage = new(); // Reset form
+            newMessage.ReceiverId = ReceiverId; // Keep receiver pre-filled
         }
         else
         {
             successMessage = "حدث خطأ أثناء الإرسال.";
         }
     }
-
-  
 }

@@ -1,0 +1,85 @@
+﻿@page "/subscribe-packages/create"
+@using BlazorApp1.Dto
+@using BlazorApp1.Models
+@inject HttpClient Http
+@inject NavigationManager Nav
+@rendermode InteractiveServer
+
+<h3>إضافة باقة جديدة</h3>
+
+<EditForm Model="model" OnValidSubmit="HandleSubmit" FormName="CreateSubscribe" method="post">
+    <DataAnnotationsValidator />
+    <ValidationSummary />
+
+    <div class="mb-3">
+        <label class="form-label">النوع (حضوري / اونلاين)</label>
+        <InputText class="form-control" @bind-Value="model.Type" />
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">اسم الباقة</label>
+        <InputText class="form-control" @bind-Value="model.Name" />
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">الخصم</label>
+        <InputNumber class="form-control" @bind-Value="model.Discount" />
+    </div>
+
+    <div class="form-check mb-3">
+        <InputCheckbox class="form-check-input" @bind-Value="model.IsSpecial" />
+        <label class="form-check-label">مميزة؟</label>
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">وصف الباقة</label>
+        <InputTextArea class="form-control" @bind-Value="model.Description" />
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">أقصى عدد طلاب</label>
+        <InputNumber class="form-control" @bind-Value="model.MaxStudents" />
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">أقصى عدد مواد</label>
+        <InputNumber class="form-control" @bind-Value="model.MaxSubjects" />
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">السعر</label>
+        <InputNumber class="form-control" @bind-Value="model.Price" />
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">السعر في الساعة</label>
+        <InputNumber class="form-control" @bind-Value="model.PricePerHour" />
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">العملة</label>
+        <InputText class="form-control" @bind-Value="model.Currency" />
+    </div>
+
+    <button type="submit" class="btn btn-success mt-3">حفظ</button>
+</EditForm>
+
+@code {
+    [SupplyParameterFromForm]
+    private SubscribePackageDto model { get; set; } = new();
+
+
+    async Task HandleSubmit()
+    {
+
+        var response = await Http.PostAsJsonAsync("/api/SubscribePackages/create", model);
+        if (response.IsSuccessStatusCode)
+        {
+            Nav.NavigateTo("/subscribe-packages");
+        }
+        else
+        {
+            Console.WriteLine("Error creating package: " + await response.Content.ReadAsStringAsync());
+        }
+    }
+}

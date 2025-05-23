@@ -5,7 +5,7 @@
 @inject NavigationManager Navigation
 
 <h2>إضافة دورة جديدة</h2>
-<EditForm Model="@form" OnValidSubmit="HandleSubmit">
+<EditForm Model="@form" OnValidSubmit="HandleSubmit" FormName="CreateCourse" method="post">
     <DataAnnotationsValidator />
     <ValidationSummary />
 
@@ -50,10 +50,7 @@
 
 @code {
     [SupplyParameterFromForm]
-    private CourseUploadDto form { get; set; } = new()
-    {
-        TeacherId = "682b81f14e5dd86cc34e668a"
-    };
+    private CourseUploadDto form { get; set; } = new();
 
     private IBrowserFile? uploadedFile;
     private string? message;

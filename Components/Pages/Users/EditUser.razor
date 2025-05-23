@@ -2,7 +2,7 @@
 @using EltafawkPlatform.Dto
 @inject HttpClient Http
 @inject NavigationManager Navigation
-
+@rendermode InteractiveServer
 <h2>تعديل المستخدم</h2>
 
 @if (form == null)
@@ -11,7 +11,7 @@
 }
 else
 {
-    <EditForm Model="form" OnValidSubmit="HandleSubmit">
+    <EditForm Model="form" OnValidSubmit="HandleSubmit" >
         <DataAnnotationsValidator />
         <ValidationSummary />
 

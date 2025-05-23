@@ -5,6 +5,7 @@ using EltafawkPlatform.Services;
 using Microsoft.AspNetCore.Cors.Infrastructure;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using System.Security.Claims;
 
 namespace EltafawkPlatform.Controllers
 {
@@ -24,6 +25,12 @@ namespace EltafawkPlatform.Controllers
         [HttpGet]
         public async Task<ActionResult<List<CourseUploadDto>>> GetAll()
         {
+            //var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+            //if (userId == null)
+            //{
+            //    // user not logged in
+            //    return Unauthorized();
+            //}
             var courses = await _courseService.GetAllCoursesAsync();
             var dtos = courses.Select(c => c.ToDto()).ToList();
             return Ok(dtos);

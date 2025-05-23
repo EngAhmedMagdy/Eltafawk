@@ -1,28 +1,25 @@
-﻿using AspNetCore.Identity.Mongo;
+using AspNetCore.Identity.Mongo;
 using AspNetCore.Identity.Mongo.Model;
-using EltafawkPlatform.Components;
+using BlazorApp1.Components;
+using BlazorApp1.Components.Account;
+using BlazorApp1.Data;
+using BlazorApp1.Settings;
 using EltafawkPlatform.Services;
-using EltafawkPlatform.Settings;
-using Microsoft.Extensions.DependencyInjection;
-using MongoDB.Driver;
-using EltafawkPlatform.Models;
+using Microsoft.AspNetCore.Components.Authorization;
 using Microsoft.AspNetCore.Identity;
-
+using MongoDB.Driver;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
-builder.Services.AddRazorComponents()
-    .AddInteractiveServerComponents();
-
-
-
+// Load Mongo settings
 builder.Services.Configure<MongoDbSettings>(
     builder.Configuration.GetSection("MongoDbSettings"));
 
-var mongoSettings = builder.Configuration.GetSection("MongoDbSettings").Get<MongoDbSettings>();
+var mongoSettings = builder.Configuration
+    .GetSection("MongoDbSettings")
+    .Get<MongoDbSettings>();
 
-
+// Register MongoDB Identity provider
 builder.Services.AddIdentityMongoDbProvider<ApplicationUser, MongoRole>(identityOptions =>
 {
     identityOptions.Password.RequiredLength = 6;
@@ -34,66 +31,61 @@ builder.Services.AddIdentityMongoDbProvider<ApplicationUser, MongoRole>(identity
     mongoOptions.RolesCollection = "Roles";
     mongoOptions.ConnectionString = mongoSettings.ConnectionString;
 });
-
-// تسجيل MongoClient ليكون متاح في DI
-builder.Services.AddSingleton<IMongoClient>(serviceProvider =>
+// Register MongoClient
+builder.Services.AddSingleton<IMongoClient>(sp =>
 {
-    var settings = serviceProvider.GetRequiredService<
-        Microsoft.Extensions.Options.IOptions<MongoDbSettings>>().Value;
-
-    return new MongoClient(settings.ConnectionString);
+    return new MongoClient(mongoSettings.ConnectionString);
 });
 
-// تسجيل قاعدة البيانات (اختياري)
-builder.Services.AddScoped(serviceProvider =>
+builder.Services.AddScoped(sp =>
 {
-    var settings = serviceProvider.GetRequiredService<
-        Microsoft.Extensions.Options.IOptions<MongoDbSettings>>().Value;
-
-    var client = serviceProvider.GetRequiredService<IMongoClient>();
-
-    return client.GetDatabase(settings.DatabaseName);
+    var client = sp.GetRequiredService<IMongoClient>();
+    return client.GetDatabase(mongoSettings.DatabaseName);
 });
 
-// HttpClient
-var apiBaseUrl = builder.Configuration["ApiBaseUrl"] ?? "https://eltafawk-production.up.railway.app/";
-
+//Identity UI Services (if you are using Razor Identity Components)
 builder.Services.AddHttpClient("ServerAPI", client =>
 {
-    client.BaseAddress = new Uri(apiBaseUrl);
+    //development
+    //client.BaseAddress = new Uri("https://localhost:44337");
+    //production
+    client.BaseAddress = new Uri("https://eltafawk-production.up.railway.app");
+
 });
-
-
 
 builder.Services.AddScoped(sp =>
     sp.GetRequiredService<IHttpClientFactory>().CreateClient("ServerAPI"));
 
-builder.Services.AddScoped<StudentService>();
-builder.Services.AddScoped<AuthService>();
+builder.Services.AddScoped<AuthenticationStateProvider, IdentityRevalidatingAuthenticationStateProvider>();
+builder.Services.AddScoped<IdentityUserAccessor>();
+builder.Services.AddScoped<IdentityRedirectManager>();
 builder.Services.AddScoped<CourseService>();
 builder.Services.AddScoped<InboxService>();
+builder.Services.AddScoped<SubscribePackageService>();
 builder.Services.AddScoped<UserService>();
 
-builder.Services.AddControllers();
+builder.Services.AddRazorComponents()
+    .AddInteractiveServerComponents();
 
+builder.Services.AddCascadingAuthenticationState();
+builder.Services.AddAuthorization();
+builder.Services.AddSingleton<IEmailSender<ApplicationUser>, IdentityNoOpEmailSender>();
+builder.Services.AddControllers();
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
-if (!app.Environment.IsDevelopment())
-{
-    app.UseExceptionHandler("/Error", createScopeForErrors: true);
-    // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
-    app.UseHsts();
-}
-
+// Middleware
 app.UseHttpsRedirection();
 
-
+app.UseStaticFiles();
+app.UseRouting();
+app.UseAuthentication();
+app.UseAuthorization();
 app.UseAntiforgery();
-
+// Identity endpoints
 app.MapControllers();
-app.MapStaticAssets();
 app.MapRazorComponents<App>()
     .AddInteractiveServerRenderMode();
+
+app.MapAdditionalIdentityEndpoints();
 
 app.Run();

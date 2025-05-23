@@ -1,0 +1,52 @@
+﻿@page "/subscribe-packages/edit/{id}"
+@using BlazorApp1.Dto
+@inject HttpClient Http
+@inject NavigationManager Nav
+@rendermode InteractiveServer
+<h3>تعديل الباقة</h3>
+
+@if (model == null)
+{
+    <p>Loading...</p>
+}
+else
+{
+    <EditForm Model="model" OnValidSubmit="HandleSubmit" FormName="EditSubscribe" method="put">
+        <DataAnnotationsValidator />
+        <ValidationSummary />
+
+        <InputText class="form-control" @bind-Value="model.Name" placeholder="اسم الباقة" />
+        <InputText class="form-control" @bind-Value="model.Type" placeholder="النوع (حضوري / اونلاين)" />
+        <InputNumber class="form-control" @bind-Value="model.Discount" />
+        <InputCheckbox @bind-Value="model.IsSpecial" /> مميزة؟
+        <InputTextArea class="form-control" @bind-Value="model.Description" />
+        <InputNumber class="form-control" @bind-Value="model.MaxStudents" />
+        <InputNumber class="form-control" @bind-Value="model.MaxSubjects" />
+        <InputNumber class="form-control" @bind-Value="model.Price" />
+        <InputNumber class="form-control" @bind-Value="model.PricePerHour" />
+        <InputText class="form-control" @bind-Value="model.Currency" placeholder="العملة" />
+
+        <button class="btn btn-success mt-3">تحديث</button>
+    </EditForm>
+}
+
+@code {
+    [Parameter] 
+    public string id { get; set; }
+    [SupplyParameterFromForm]
+    private SubscribePackageDto? model { get; set; }
+
+    protected override async Task OnInitializedAsync()
+    {
+        model = await Http.GetFromJsonAsync<SubscribePackageDto>($"/api/SubscribePackages/{id}");
+    }
+
+    async Task HandleSubmit()
+    {
+        var response = await Http.PutAsJsonAsync($"/api/SubscribePackages/{id}", model);
+        if (response.IsSuccessStatusCode)
+        {
+            Nav.NavigateTo("/subscribe-packages");
+        }
+    }
+}

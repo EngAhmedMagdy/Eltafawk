@@ -3,7 +3,7 @@
 @inject HttpClient Http
 @inject NavigationManager Navigation
 @inject IJSRuntime JsRuntime
-
+@rendermode InteractiveServer
 <h3>الدورات التدريبية</h3>
 
 <button class="btn btn-primary mb-3" @onclick="CreateNew">➕ إضافة دورة جديدة</button>
@@ -50,7 +50,7 @@ else
 
     protected override async Task OnInitializedAsync()
     {
-        courses = await Http.GetFromJsonAsync<List<CourseUploadDto>>("/api/courses");
+        courses = await Http.GetFromJsonAsync<List<CourseUploadDto>>("api/courses");
     }
 
     private void CreateNew()
@@ -68,7 +68,7 @@ else
         if (!await JsRuntime.InvokeAsync<bool>("confirm", "هل أنت متأكد من حذف هذه الدورة؟"))
             return;
 
-        var response = await Http.DeleteAsync($"/api/courses/{id}");
+        var response = await Http.DeleteAsync($"api/courses/{id}");
         if (response.IsSuccessStatusCode)
         {
            courses = courses?.Where(c => c.Id != id).ToList();
