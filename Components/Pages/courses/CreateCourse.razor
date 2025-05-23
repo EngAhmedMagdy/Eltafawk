@@ -3,6 +3,8 @@
 @using System.Text.Json
 @inject HttpClient Http
 @inject NavigationManager Navigation
+@inject AuthenticationStateProvider AuthenticationStateProvider
+@rendermode InteractiveServer
 
 <h2>إضافة دورة جديدة</h2>
 <EditForm Model="@form" OnValidSubmit="HandleSubmit" FormName="CreateCourse" method="post">
@@ -62,11 +64,23 @@
 
     private async Task HandleSubmit()
     {
+        var authState = await AuthenticationStateProvider.GetAuthenticationStateAsync();
+        var user = authState.User;
+
+        if (user.Identity?.IsAuthenticated == true)
+        {
+            var userId = user.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier)?.Value;
+            if (userId != null)
+            {
+                form.TeacherId = userId;
+            }
+        }
         if (uploadedFile != null)
         {
             var path = await UploadImageAsync(uploadedFile) ?? "";
             form.ImageFiles = path;
         }
+        form.Id = "";
         var response = await Http.PostAsJsonAsync("/api/courses/create", form);
         if (response.IsSuccessStatusCode)
         {
@@ -77,6 +91,7 @@
         {
             message = "فشل في إنشاء الدورة.";
         }
+
     }
     private async Task<string?> UploadImageAsync(IBrowserFile file)
     {

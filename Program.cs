@@ -43,14 +43,16 @@ builder.Services.AddScoped(sp =>
     return client.GetDatabase(mongoSettings.DatabaseName);
 });
 
-//Identity UI Services (if you are using Razor Identity Components)
+// Access environment
+var env = builder.Environment;
+
+var baseUrl = env.IsDevelopment()
+    ? "https://localhost:44337"
+    : "https://eltafawk-production.up.railway.app";
+
 builder.Services.AddHttpClient("ServerAPI", client =>
 {
-    //development
-    //client.BaseAddress = new Uri("https://localhost:44337");
-    //production
-    client.BaseAddress = new Uri("https://eltafawk-production.up.railway.app");
-
+    client.BaseAddress = new Uri(baseUrl);
 });
 
 builder.Services.AddScoped(sp =>
