@@ -6,7 +6,10 @@
 @rendermode InteractiveServer
 
 <h3>باقات التفوق</h3>
-<NavLink href="/subscribe-packages/create" class="btn btn-primary mb-3">إضافة باقة</NavLink>
+<AuthorizeView Roles="Admin">
+    <NavLink href="/subscribe-packages/create" class="btn btn-primary mb-3">إضافة باقة</NavLink>
+</AuthorizeView>
+
 
 @if (packages == null)
 {

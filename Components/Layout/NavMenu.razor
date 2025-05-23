@@ -17,13 +17,21 @@
                 <span class="bi bi-house-door-fill-nav-menu" aria-hidden="true"></span> Home
             </NavLink>
         </div>
-
         <div class="nav-item px-3">
             <NavLink class="nav-link" href="auth">
                 <span class="bi bi-lock-nav-menu" aria-hidden="true"></span> Auth Required
             </NavLink>
         </div>
-
+        <div class="nav-item px-3">
+            <NavLink class="nav-link" href="/subscribe-packages">
+                <span class="bi bi-list-nested-nav-menu" aria-hidden="true"></span> Offers
+            </NavLink>
+        </div>
+        <div class="nav-item px-3">
+            <NavLink class="nav-link" href="/courses">
+                <span class="bi bi-list-nested-nav-menu" aria-hidden="true"></span> My Courses
+            </NavLink>
+        </div>
         <AuthorizeView>
             <Authorized Context="authContext">
                 @{
@@ -50,24 +58,20 @@
                         <span class="bi bi-list-nested-nav-menu" aria-hidden="true"></span> Users Management
                     </NavLink>
                 </div>
-                <div class="nav-item px-3">
-                    <NavLink class="nav-link" href="/courses">
-                        <span class="bi bi-list-nested-nav-menu" aria-hidden="true"></span> My Courses
-                    </NavLink>
-                </div>
+               
                 <div class="nav-item px-3">
                     <NavLink class="nav-link" href="@($"/inbox/{userId}")">
                         <span class="bi bi-list-nested-nav-menu" aria-hidden="true"></span> Inbox
                     </NavLink>
                 </div>
-
-            </Authorized>
-            <NotAuthorized>
                 <div class="nav-item px-3">
-                    <NavLink class="nav-link" href="/subscribe-packages">
-                        <span class="bi bi-list-nested-nav-menu" aria-hidden="true"></span> Offers
+                    <NavLink class="nav-link" href="/request-teacher">
+                        <span class="bi bi-list-nested-nav-menu" aria-hidden="true"></span> اطلب معلم
                     </NavLink>
                 </div>
+            </Authorized>
+            <NotAuthorized>
+              
               
                 <div class="nav-item px-3">
                     <NavLink class="nav-link" href="Account/Register">

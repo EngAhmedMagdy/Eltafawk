@@ -3,6 +3,7 @@ using AspNetCore.Identity.Mongo.Model;
 using BlazorApp1.Components;
 using BlazorApp1.Components.Account;
 using BlazorApp1.Data;
+using BlazorApp1.Helper;
 using BlazorApp1.Settings;
 using EltafawkPlatform.Services;
 using Microsoft.AspNetCore.Components.Authorization;
@@ -74,10 +75,10 @@ builder.Services.AddAuthorization();
 builder.Services.AddSingleton<IEmailSender<ApplicationUser>, IdentityNoOpEmailSender>();
 builder.Services.AddControllers();
 var app = builder.Build();
-
+//Fresh database calls
+RoleProvider.CreateDefaultRoles(app);
 // Middleware
 app.UseHttpsRedirection();
-
 app.UseStaticFiles();
 app.UseRouting();
 app.UseAuthentication();

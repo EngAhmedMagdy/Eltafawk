@@ -1,8 +1,10 @@
-﻿using EltafawkPlatform.Dto;
+﻿using BlazorApp1.Dto;
+using EltafawkPlatform.Dto;
 using EltafawkPlatform.Mapper;
 
 using EltafawkPlatform.Models;
 using EltafawkPlatform.Services;
+using Humanizer;
 using Microsoft.AspNetCore.Mvc;
 
 namespace EltafawkPlatform.Controllers
@@ -41,7 +43,13 @@ namespace EltafawkPlatform.Controllers
             var result = await _inboxService.SendMessageAsync(model);
             return Ok(result.ToDto());
         }
-
+        [HttpPost("request-teacher")]
+        public async Task<IActionResult> RequestTeacher([FromBody] InboxRequestDto request)
+        {
+            var model = request.MapToMessage();
+            var result = await _inboxService.SendMessageAsync(model);
+            return Ok(result.ToDto());
+        }
         [HttpPost("{messageId}/reply")]
         public async Task<IActionResult> Reply(string messageId, [FromBody] ReplyDto replyDto)
         {

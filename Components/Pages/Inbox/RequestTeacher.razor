@@ -1,0 +1,114 @@
+﻿@page "/request-teacher"
+@using BlazorApp1.Dto
+@using EltafawkPlatform.Dto
+@inject HttpClient Http
+@inject NavigationManager Navigation
+@inject AuthenticationStateProvider AuthenticationStateProvider
+
+@rendermode InteractiveServer
+<h3>طلب معلم</h3>
+
+<EditForm Model="@form" OnValidSubmit="HandleSubmit">
+    <DataAnnotationsValidator />
+    <ValidationSummary />
+
+    <div class="form-group">
+        <label>المادة</label>
+        <InputText @bind-Value="form.Course" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label>النظام التعليمي</label>
+        <InputText @bind-Value="form.EducationSystem" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label>الصف الدراسي</label>
+        <InputText @bind-Value="form.Grade" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label>اسم المدرسة</label>
+        <InputText @bind-Value="form.SchoolName" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label>المنطقة</label>
+        <InputText @bind-Value="form.Region" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label>ما هو هدف التعلم</label>
+        <InputTextArea @bind-Value="form.LearningGoal" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label>من المتعلم</label>
+        <InputText @bind-Value="form.Learner" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label>الاسم الاول</label>
+        <InputText @bind-Value="form.FirstName" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label>الاسم الاخير</label>
+        <InputText @bind-Value="form.LastName" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label>رقم الهاتف</label>
+        <InputText @bind-Value="form.Phone" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label>البريد الالكتروني</label>
+        <InputText @bind-Value="form.Email" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label>كود البلد</label>
+        <InputText @bind-Value="form.CountryCode" class="form-control" />
+    </div>
+
+    <button class="btn btn-primary">إرسال</button>
+</EditForm>
+
+@if (!string.IsNullOrEmpty(message))
+{
+    <div class="alert alert-info mt-3">@message</div>
+}
+
+@code {
+    [SupplyParameterFromForm]
+    private InboxRequestDto form { get; set; } = new();
+    private string? message;
+
+    private async Task HandleSubmit()
+    {
+        var authState = await AuthenticationStateProvider.GetAuthenticationStateAsync();
+        var user = authState.User;
+
+        if (user.Identity?.IsAuthenticated == true)
+        {
+            var userId = user.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier)?.Value;
+            if (userId != null)
+            {
+                form.SenderId = userId;
+            }
+        }
+
+        var response = await Http.PostAsJsonAsync("/api/inbox/request-teacher", form);
+
+        if (response.IsSuccessStatusCode)
+        {
+            message = "تم إرسال الطلب بنجاح!";
+            form = new(); // Reset form
+        }
+        else
+        {
+            message = "فشل في إرسال الطلب.";
+        }
+    }
+}

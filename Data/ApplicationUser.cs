@@ -16,5 +16,8 @@ namespace BlazorApp1.Data
         public double Rating { get; set; }
         public bool IsApproved { get; set; }
     }
+    public class ApplicationRole : MongoRole
+    {
+    }
 
 }

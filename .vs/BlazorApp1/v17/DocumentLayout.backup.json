@@ -1,0 +1,292 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\ahmed magdy\\Desktop\\freelance\\Eltafawk Production\\Eltafawk\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{64CE108B-2F43-4888-86D4-6068FAD405C3}|BlazorApp1.csproj|c:\\users\\ahmed magdy\\desktop\\freelance\\eltafawk production\\eltafawk\\components\\layout\\navmenu.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{64CE108B-2F43-4888-86D4-6068FAD405C3}|BlazorApp1.csproj|solutionrelative:components\\layout\\navmenu.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{64CE108B-2F43-4888-86D4-6068FAD405C3}|BlazorApp1.csproj|c:\\users\\ahmed magdy\\desktop\\freelance\\eltafawk production\\eltafawk\\components\\pages\\subscribepackages\\subscribepackages.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{64CE108B-2F43-4888-86D4-6068FAD405C3}|BlazorApp1.csproj|solutionrelative:components\\pages\\subscribepackages\\subscribepackages.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{64CE108B-2F43-4888-86D4-6068FAD405C3}|BlazorApp1.csproj|c:\\users\\ahmed magdy\\desktop\\freelance\\eltafawk production\\eltafawk\\components\\pages\\inbox\\inbox.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{64CE108B-2F43-4888-86D4-6068FAD405C3}|BlazorApp1.csproj|solutionrelative:components\\pages\\inbox\\inbox.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{64CE108B-2F43-4888-86D4-6068FAD405C3}|BlazorApp1.csproj|c:\\users\\ahmed magdy\\desktop\\freelance\\eltafawk production\\eltafawk\\components\\pages\\courses\\courses.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{64CE108B-2F43-4888-86D4-6068FAD405C3}|BlazorApp1.csproj|solutionrelative:components\\pages\\courses\\courses.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{64CE108B-2F43-4888-86D4-6068FAD405C3}|BlazorApp1.csproj|c:\\users\\ahmed magdy\\desktop\\freelance\\eltafawk production\\eltafawk\\components\\account\\pages\\register.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{64CE108B-2F43-4888-86D4-6068FAD405C3}|BlazorApp1.csproj|solutionrelative:components\\account\\pages\\register.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{64CE108B-2F43-4888-86D4-6068FAD405C3}|BlazorApp1.csproj|c:\\users\\ahmed magdy\\desktop\\freelance\\eltafawk production\\eltafawk\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{64CE108B-2F43-4888-86D4-6068FAD405C3}|BlazorApp1.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{64CE108B-2F43-4888-86D4-6068FAD405C3}|BlazorApp1.csproj|c:\\users\\ahmed magdy\\desktop\\freelance\\eltafawk production\\eltafawk\\components\\account\\pages\\login.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{64CE108B-2F43-4888-86D4-6068FAD405C3}|BlazorApp1.csproj|solutionrelative:components\\account\\pages\\login.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{64CE108B-2F43-4888-86D4-6068FAD405C3}|BlazorApp1.csproj|c:\\users\\ahmed magdy\\desktop\\freelance\\eltafawk production\\eltafawk\\data\\applicationuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{64CE108B-2F43-4888-86D4-6068FAD405C3}|BlazorApp1.csproj|solutionrelative:data\\applicationuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{64CE108B-2F43-4888-86D4-6068FAD405C3}|BlazorApp1.csproj|c:\\users\\ahmed magdy\\desktop\\freelance\\eltafawk production\\eltafawk\\models\\loginmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{64CE108B-2F43-4888-86D4-6068FAD405C3}|BlazorApp1.csproj|solutionrelative:models\\loginmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{64CE108B-2F43-4888-86D4-6068FAD405C3}|BlazorApp1.csproj|c:\\users\\ahmed magdy\\desktop\\freelance\\eltafawk production\\eltafawk\\helper\\roleseeder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{64CE108B-2F43-4888-86D4-6068FAD405C3}|BlazorApp1.csproj|solutionrelative:helper\\roleseeder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{64CE108B-2F43-4888-86D4-6068FAD405C3}|BlazorApp1.csproj|c:\\users\\ahmed magdy\\desktop\\freelance\\eltafawk production\\eltafawk\\enum\\approles.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{64CE108B-2F43-4888-86D4-6068FAD405C3}|BlazorApp1.csproj|solutionrelative:enum\\approles.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{64CE108B-2F43-4888-86D4-6068FAD405C3}|BlazorApp1.csproj|c:\\users\\ahmed magdy\\desktop\\freelance\\eltafawk production\\eltafawk\\dto\\applicationuserdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{64CE108B-2F43-4888-86D4-6068FAD405C3}|BlazorApp1.csproj|solutionrelative:dto\\applicationuserdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{64CE108B-2F43-4888-86D4-6068FAD405C3}|BlazorApp1.csproj|c:\\users\\ahmed magdy\\desktop\\freelance\\eltafawk production\\eltafawk\\controllers\\inboxcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{64CE108B-2F43-4888-86D4-6068FAD405C3}|BlazorApp1.csproj|solutionrelative:controllers\\inboxcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{64CE108B-2F43-4888-86D4-6068FAD405C3}|BlazorApp1.csproj|c:\\users\\ahmed magdy\\desktop\\freelance\\eltafawk production\\eltafawk\\components\\pages\\inbox\\requestteacher.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{64CE108B-2F43-4888-86D4-6068FAD405C3}|BlazorApp1.csproj|solutionrelative:components\\pages\\inbox\\requestteacher.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{64CE108B-2F43-4888-86D4-6068FAD405C3}|BlazorApp1.csproj|c:\\users\\ahmed magdy\\desktop\\freelance\\eltafawk production\\eltafawk\\mapper\\inboxmessagemapper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{64CE108B-2F43-4888-86D4-6068FAD405C3}|BlazorApp1.csproj|solutionrelative:mapper\\inboxmessagemapper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{64CE108B-2F43-4888-86D4-6068FAD405C3}|BlazorApp1.csproj|c:\\users\\ahmed magdy\\desktop\\freelance\\eltafawk production\\eltafawk\\components\\pages\\inbox\\sendmessage.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{64CE108B-2F43-4888-86D4-6068FAD405C3}|BlazorApp1.csproj|solutionrelative:components\\pages\\inbox\\sendmessage.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 4,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "SubscribePackages.razor",
+              "DocumentMoniker": "C:\\Users\\ahmed magdy\\Desktop\\freelance\\Eltafawk Production\\Eltafawk\\Components\\Pages\\SubscribePackages\\SubscribePackages.razor",
+              "RelativeDocumentMoniker": "Components\\Pages\\SubscribePackages\\SubscribePackages.razor",
+              "ToolTip": "C:\\Users\\ahmed magdy\\Desktop\\freelance\\Eltafawk Production\\Eltafawk\\Components\\Pages\\SubscribePackages\\SubscribePackages.razor",
+              "RelativeToolTip": "Components\\Pages\\SubscribePackages\\SubscribePackages.razor",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAkAAABgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-23T22:00:04.983Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\ahmed magdy\\Desktop\\freelance\\Eltafawk Production\\Eltafawk\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\Users\\ahmed magdy\\Desktop\\freelance\\Eltafawk Production\\Eltafawk\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAAEUAAAAAAAAAAAAAAFAAAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-23T21:27:52.147Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Courses.razor",
+              "DocumentMoniker": "C:\\Users\\ahmed magdy\\Desktop\\freelance\\Eltafawk Production\\Eltafawk\\Components\\Pages\\courses\\Courses.razor",
+              "RelativeDocumentMoniker": "Components\\Pages\\courses\\Courses.razor",
+              "ToolTip": "C:\\Users\\ahmed magdy\\Desktop\\freelance\\Eltafawk Production\\Eltafawk\\Components\\Pages\\courses\\Courses.razor",
+              "RelativeToolTip": "Components\\Pages\\courses\\Courses.razor",
+              "ViewState": "AgIAADAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-23T21:24:54.803Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Register.razor",
+              "DocumentMoniker": "C:\\Users\\ahmed magdy\\Desktop\\freelance\\Eltafawk Production\\Eltafawk\\Components\\Account\\Pages\\Register.razor",
+              "RelativeDocumentMoniker": "Components\\Account\\Pages\\Register.razor",
+              "ToolTip": "C:\\Users\\ahmed magdy\\Desktop\\freelance\\Eltafawk Production\\Eltafawk\\Components\\Account\\Pages\\Register.razor",
+              "RelativeToolTip": "Components\\Account\\Pages\\Register.razor",
+              "ViewState": "AgIAAG4AAAAAAAAAAAAhwH0AAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-23T21:16:43.913Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "NavMenu.razor",
+              "DocumentMoniker": "C:\\Users\\ahmed magdy\\Desktop\\freelance\\Eltafawk Production\\Eltafawk\\Components\\Layout\\NavMenu.razor",
+              "RelativeDocumentMoniker": "Components\\Layout\\NavMenu.razor",
+              "ToolTip": "C:\\Users\\ahmed magdy\\Desktop\\freelance\\Eltafawk Production\\Eltafawk\\Components\\Layout\\NavMenu.razor*",
+              "RelativeToolTip": "Components\\Layout\\NavMenu.razor*",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAWwBsAAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-23T21:01:14.152Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Inbox.razor",
+              "DocumentMoniker": "C:\\Users\\ahmed magdy\\Desktop\\freelance\\Eltafawk Production\\Eltafawk\\Components\\Pages\\Inbox\\Inbox.razor",
+              "RelativeDocumentMoniker": "Components\\Pages\\Inbox\\Inbox.razor",
+              "ToolTip": "C:\\Users\\ahmed magdy\\Desktop\\freelance\\Eltafawk Production\\Eltafawk\\Components\\Pages\\Inbox\\Inbox.razor",
+              "RelativeToolTip": "Components\\Pages\\Inbox\\Inbox.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAAAYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-23T21:05:05.99Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "LoginModel.cs",
+              "DocumentMoniker": "C:\\Users\\ahmed magdy\\Desktop\\freelance\\Eltafawk Production\\Eltafawk\\Models\\LoginModel.cs",
+              "RelativeDocumentMoniker": "Models\\LoginModel.cs",
+              "ToolTip": "C:\\Users\\ahmed magdy\\Desktop\\freelance\\Eltafawk Production\\Eltafawk\\Models\\LoginModel.cs",
+              "RelativeToolTip": "Models\\LoginModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-23T21:13:33.342Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "ApplicationUser.cs",
+              "DocumentMoniker": "C:\\Users\\ahmed magdy\\Desktop\\freelance\\Eltafawk Production\\Eltafawk\\Data\\ApplicationUser.cs",
+              "RelativeDocumentMoniker": "Data\\ApplicationUser.cs",
+              "ToolTip": "C:\\Users\\ahmed magdy\\Desktop\\freelance\\Eltafawk Production\\Eltafawk\\Data\\ApplicationUser.cs",
+              "RelativeToolTip": "Data\\ApplicationUser.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-23T21:13:44.694Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "RoleSeeder.cs",
+              "DocumentMoniker": "C:\\Users\\ahmed magdy\\Desktop\\freelance\\Eltafawk Production\\Eltafawk\\Helper\\RoleSeeder.cs",
+              "RelativeDocumentMoniker": "Helper\\RoleSeeder.cs",
+              "ToolTip": "C:\\Users\\ahmed magdy\\Desktop\\freelance\\Eltafawk Production\\Eltafawk\\Helper\\RoleSeeder.cs",
+              "RelativeToolTip": "Helper\\RoleSeeder.cs",
+              "ViewState": "AgIAAAIAAAAAAAAAAAArwAoAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-23T21:30:40.494Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Login.razor",
+              "DocumentMoniker": "C:\\Users\\ahmed magdy\\Desktop\\freelance\\Eltafawk Production\\Eltafawk\\Components\\Account\\Pages\\Login.razor",
+              "RelativeDocumentMoniker": "Components\\Account\\Pages\\Login.razor",
+              "ToolTip": "C:\\Users\\ahmed magdy\\Desktop\\freelance\\Eltafawk Production\\Eltafawk\\Components\\Account\\Pages\\Login.razor",
+              "RelativeToolTip": "Components\\Account\\Pages\\Login.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-23T21:49:55.494Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "ApplicationUserDto.cs",
+              "DocumentMoniker": "C:\\Users\\ahmed magdy\\Desktop\\freelance\\Eltafawk Production\\Eltafawk\\Dto\\ApplicationUserDto.cs",
+              "RelativeDocumentMoniker": "Dto\\ApplicationUserDto.cs",
+              "ToolTip": "C:\\Users\\ahmed magdy\\Desktop\\freelance\\Eltafawk Production\\Eltafawk\\Dto\\ApplicationUserDto.cs",
+              "RelativeToolTip": "Dto\\ApplicationUserDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-23T21:13:09.622Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "AppRoles.cs",
+              "DocumentMoniker": "C:\\Users\\ahmed magdy\\Desktop\\freelance\\Eltafawk Production\\Eltafawk\\Enum\\AppRoles.cs",
+              "RelativeDocumentMoniker": "Enum\\AppRoles.cs",
+              "ToolTip": "C:\\Users\\ahmed magdy\\Desktop\\freelance\\Eltafawk Production\\Eltafawk\\Enum\\AppRoles.cs",
+              "RelativeToolTip": "Enum\\AppRoles.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-23T21:12:16.01Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "InboxMessageMapper.cs",
+              "DocumentMoniker": "C:\\Users\\ahmed magdy\\Desktop\\freelance\\Eltafawk Production\\Eltafawk\\Mapper\\InboxMessageMapper.cs",
+              "RelativeDocumentMoniker": "Mapper\\InboxMessageMapper.cs",
+              "ToolTip": "C:\\Users\\ahmed magdy\\Desktop\\freelance\\Eltafawk Production\\Eltafawk\\Mapper\\InboxMessageMapper.cs",
+              "RelativeToolTip": "Mapper\\InboxMessageMapper.cs",
+              "ViewState": "AgIAACcAAAAAAAAAAAAowDgAAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-23T20:42:52.047Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "SendMessage.razor",
+              "DocumentMoniker": "C:\\Users\\ahmed magdy\\Desktop\\freelance\\Eltafawk Production\\Eltafawk\\Components\\Pages\\Inbox\\SendMessage.razor",
+              "RelativeDocumentMoniker": "Components\\Pages\\Inbox\\SendMessage.razor",
+              "ToolTip": "C:\\Users\\ahmed magdy\\Desktop\\freelance\\Eltafawk Production\\Eltafawk\\Components\\Pages\\Inbox\\SendMessage.razor",
+              "RelativeToolTip": "Components\\Pages\\Inbox\\SendMessage.razor",
+              "ViewState": "AgIAACcAAAAAAAAAAAAAAEAAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-23T20:41:53.799Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "RequestTeacher.razor",
+              "DocumentMoniker": "C:\\Users\\ahmed magdy\\Desktop\\freelance\\Eltafawk Production\\Eltafawk\\Components\\Pages\\Inbox\\RequestTeacher.razor",
+              "RelativeDocumentMoniker": "Components\\Pages\\Inbox\\RequestTeacher.razor",
+              "ToolTip": "C:\\Users\\ahmed magdy\\Desktop\\freelance\\Eltafawk Production\\Eltafawk\\Components\\Pages\\Inbox\\RequestTeacher.razor",
+              "RelativeToolTip": "Components\\Pages\\Inbox\\RequestTeacher.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-23T20:38:14.116Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "InboxController.cs",
+              "DocumentMoniker": "C:\\Users\\ahmed magdy\\Desktop\\freelance\\Eltafawk Production\\Eltafawk\\Controllers\\InboxController.cs",
+              "RelativeDocumentMoniker": "Controllers\\InboxController.cs",
+              "ToolTip": "C:\\Users\\ahmed magdy\\Desktop\\freelance\\Eltafawk Production\\Eltafawk\\Controllers\\InboxController.cs",
+              "RelativeToolTip": "Controllers\\InboxController.cs",
+              "ViewState": "AgIAAB4AAAAAAAAAAAAIwDQAAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-23T20:35:34.196Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

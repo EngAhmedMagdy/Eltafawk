@@ -42,6 +42,19 @@
                 <label for="Input.ConfirmPassword">Confirm Password</label>
                 <ValidationMessage For="() => Input.ConfirmPassword" class="text-danger" />
             </div>
+            <div class="mb-3">
+                <label for="roleSelect" class="form-label">Select Role</label>
+                <InputSelect id="roleSelect" class="form-select" @bind-Value="Input.SelectedRole">
+                    <option value="">-- Select Role --</option>
+                    @foreach (var role in Input.Roles)
+                    {
+                        <option value="@role">@role</option>
+                    }
+                </InputSelect>
+                <ValidationMessage For="() => Input.SelectedRole" class="text-danger" />
+            </div>
+
+           
             <button type="submit" class="w-100 btn btn-lg btn-primary">Register</button>
         </EditForm>
     </div>
@@ -64,7 +77,10 @@
     private string? ReturnUrl { get; set; }
 
     private string? Message => identityErrors is null ? null : $"Error: {string.Join(", ", identityErrors.Select(error => error.Description))}";
-
+    protected override void OnInitialized()
+    {
+        Input.Roles ??= new List<string> { "Student", "Teacher", "Admin" };
+    }
     public async Task RegisterUser(EditContext editContext)
     {
         var user = CreateUser();
@@ -81,6 +97,14 @@
         }
 
         Logger.LogInformation("User created a new account with password.");
+
+        //assign role
+        var roleAssignmentResult = await UserManager.AddToRoleAsync(user, Input.SelectedRole);
+        if (!roleAssignmentResult.Succeeded)
+        {
+            identityErrors = roleAssignmentResult.Errors;
+            return;
+        }
 
         var userId = await UserManager.GetUserIdAsync(user);
         var code = await UserManager.GenerateEmailConfirmationTokenAsync(user);
@@ -99,7 +123,7 @@
         }
 
         await SignInManager.SignInAsync(user, isPersistent: false);
-        RedirectManager.RedirectTo(ReturnUrl);
+        RedirectManager.RedirectTo("/");
     }
 
     private ApplicationUser CreateUser()
@@ -141,5 +165,10 @@
         [Display(Name = "Confirm password")]
         [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
         public string ConfirmPassword { get; set; } = "";
+
+        [Required(ErrorMessage = "Role selection is required.")]
+        public string SelectedRole { get; set; } = string.Empty;
+
+        public List<string> Roles { get; set; }
     }
 }

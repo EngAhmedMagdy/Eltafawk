@@ -1,4 +1,5 @@
-﻿using EltafawkPlatform.Dto;
+﻿using BlazorApp1.Dto;
+using EltafawkPlatform.Dto;
 using EltafawkPlatform.Models;
 using MongoDB.Bson;
 
@@ -45,6 +46,30 @@ namespace EltafawkPlatform.Mapper
                 }).ToList()
             };
         }
+        public static InboxMessageModel MapToMessage(this InboxRequestDto dto)
+        {
+            return new InboxMessageModel
+            {
+                Id = ObjectId.GenerateNewId(),
+                SenderId = dto.SenderId,
+                ReceiverId = dto.ReceiverId,
+                Subject = dto.Subject,
+                Body = $@"
+                        المادة: {dto.Course}
+                        النظام التعليمي: {dto.EducationSystem}
+                        الصف الدراسي: {dto.Grade}
+                        اسم المدرسة: {dto.SchoolName}
+                        المنطقة: {dto.Region}
+                        هدف التعلم: {dto.LearningGoal}
+                        من المتعلم: {dto.Learner}
+                        الاسم: {dto.FirstName} {dto.LastName}
+                        رقم الهاتف: {dto.CountryCode} {dto.Phone}
+                        البريد الإلكتروني: {dto.Email}".Trim(),
+                SentAt = DateTime.UtcNow,
+                IsRead = false
+            };
+        }
+
     }
 
 }
